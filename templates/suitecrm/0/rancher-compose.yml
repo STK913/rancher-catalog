@@ -7,7 +7,7 @@
   questions:
     - variable: port
       label: Port number
-      type: string
+      type: int
       required: true
 
     - variable: username
