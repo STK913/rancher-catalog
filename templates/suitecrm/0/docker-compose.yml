@@ -1,32 +1,51 @@
-version: 2
-services:
-  mariadb:
-    image: bitnami/mariadb:latest
-    environment:
-      - MARIADB_USER=bn_suitecrm
-      - MARIADB_DATABASE=bitnami_suitecrm
-      - ALLOW_EMPTY_PASSWORD=yes
-    volumes:
-      - mariadb_data:/bitnami
-  suitecrm:
-    image: bitnami/suitecrm:latest
-    environment:
-      - MARIADB_HOST=mariadb
-      - MARIADB_PORT_NUMBER=3306
-      - SUITECRM_DATABASE_USER=bn_suitecrm
-      - SUITECRM_DATABASE_NAME=bitnami_suitecrm
-      - ALLOW_EMPTY_PASSWORD=yes
-    labels:
-      kompose.service.type: nodeport
-    ports:
-      - ${port}:80
-    volumes:
-      - suitecrm_data:/bitnami
-      - /docker/volumes/SuiteCRM/config_override.php:/bitnami/suitecrm/config_override.php:ro
-    depends_on:
-      - mariadb
-volumes:
-  mariadb_data:
-    driver: local
-  suitecrm_data:
-    driver: local
+.catalog:
+  name: "Alfresco"
+  version: "5.1.0-201605-GA"
+  description: "Alfresco Electronic Document Management"
+  uuid: alfresco-5.1-201605-1
+  minimum_rancher_version: v0.56.0
+  questions:
+    - variable: database_name
+      description: "Name of the Alfresco database"
+      label: "Database name"
+      type: "string"
+      required: true
+      default: "alfresco"
+    - variable: database_user
+      description: "Login for the Alfresco database"
+      label: "Database login"
+      type: "string"
+      required: true
+      default: "alfresco"
+    - variable: database_password
+      description: "Password for the Alfresco database"
+      label: "Database password"
+      type: "string"
+      required: true
+      default: "alfresco"
+
+alfresco:
+  scale: 1
+  health_check:
+    port: 8080
+    interval: 5000
+    unhealthy_threshold: 3
+    strategy: recreate
+    healthy_threshold: 3
+    response_timeout: 5000
+
+postgres:
+  scale: 1
+  health_check:
+    port: 5432
+    interval: 5000
+    unhealthy_threshold: 3
+    strategy: recreate
+    response_timeout: 5000
+    healthy_threshold: 3
+
+postgres-data:
+  scale: 1
+
+alfresco-data:
+  scale: 1
