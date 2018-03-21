@@ -3,7 +3,7 @@ services:
   mariadb:
     image: bitnami/mariadb:latest
     environment:
-      MARIADB_USER: 'suitecrm_user2'
+      MARIADB_USER: 'suitecrm_user'
       MARIADB_DATABASE: 'suitecrm_db'
       ALLOW_EMPTY_PASSWORD: 'yes'
     volumes:
@@ -13,7 +13,7 @@ services:
     environment:
       MARIADB_HOST: 'mariadb'
       MARIADB_PORT_NUMBER: '3306'
-      SUITECRM_DATABASE_USER: 'suitecrm_user2'
+      SUITECRM_DATABASE_USER: 'suitecrm_user'
       SUITECRM_DATABASE_NAME: 'suitecrm_db'
       ALLOW_EMPTY_PASSWORD: 'yes'
       SUITECRM_USERNAME: '${username}'

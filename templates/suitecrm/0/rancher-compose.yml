@@ -1,6 +1,6 @@
 .catalog:
   name: SuiteCRM
-  version: 0.0.1
+  version: 0.0.2
   description: SuiteCRM
   uuid: suitecrm-ubimap-0.0.1
   minimum_rancher_version: v0.56.0
