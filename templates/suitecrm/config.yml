@@ -1,4 +1,8 @@
-name: UbiMap Catalog
-description: UbiMap Catalog
-version: v0.1.0
-category: Rancher Services
+name: SuiteCRM
+description: |
+  SuiteCRM for Rancher
+version: 0.0.1-rancher1
+category: CRM
+maintainer: Victor Gillet <victor.gillet@ubimap.fr>
+license: Apache 2
+projectURL: https://github.com/STK913/rancher-catalog
