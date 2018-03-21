@@ -22,7 +22,7 @@ services:
     labels:
       kompose.service.type: nodeport
     ports:
-      - '${port}':80
+      - '${port}:80'
     volumes:
       - suitecrm_data:/bitnami
     depends_on:
