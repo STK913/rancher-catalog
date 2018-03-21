@@ -25,7 +25,6 @@ services:
       - ${port}:80
     volumes:
       - suitecrm_data:/bitnami
-      - /docker/volumes/SuiteCRM/config_override.php:/bitnami/suitecrm/config_override.php:ro
     depends_on:
       - mariadb
 volumes:
