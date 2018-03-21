@@ -6,8 +6,21 @@
   minimum_rancher_version: v0.56.0
   questions:
     - variable: port
-      description: Port number
       label: Port number
+      type: int
+      required: true
+
+    - variable: username
+      label: Username
       type: string
       required: true
-      default: 8080
+
+    - variable: password
+      label: Password
+      type: string
+      required: true
+
+    - variable: email
+      label: Email
+      type: string
+      required: true
