@@ -24,6 +24,7 @@ services:
     ports:
       - '${port}:80'
     volumes:
+      - /docker/volumes/suitecrm/installSystemCheck.php:/bitnami/suitecrm/install/installSystemCheck.php:ro
       - /docker/volumes/suitecrm/Configurator.php:/bitnami/suitecrm/modules/Configurator/Configurator.php:ro
       - /docker/volumes/suitecrm/config_override.php:/bitnami/suitecrm/config_override.php:ro
       - suitecrm_data:/bitnami
