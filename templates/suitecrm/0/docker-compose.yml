@@ -24,6 +24,7 @@ services:
     ports:
       - '${port}:80'
     volumes:
+      - suitecrm_data/config_override.php:/bitnami/suitecrm/config_override.php
       - suitecrm_data:/bitnami
     depends_on:
       - mariadb
