@@ -19,6 +19,7 @@ services:
       SUITECRM_USERNAME: '${username}'
       SUITECRM_PASSWORD: '${password}'
       SUITECRM_EMAIL: '${email}'
+      SUITECRM_HOST: '${host}'
     labels:
       kompose.service.type: nodeport
     ports:
