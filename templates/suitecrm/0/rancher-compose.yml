@@ -7,7 +7,7 @@
   questions:
     - variable: port
       label: Port number
-      type: string
+      type: int
       required: true
 
     - variable: username
@@ -24,7 +24,7 @@
       label: Email
       type: string
       required: true
-	  
+
     - variable: host
       label: Host
       type: string
