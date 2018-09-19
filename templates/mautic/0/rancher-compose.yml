@@ -1,6 +1,6 @@
 .catalog:
   name: Mautic
-  version: 0.0.2
+  version: 0.0.1
   description: Mautic
   uuid: mautic-ubimap-0.0.1
   minimum_rancher_version: v0.56.0
