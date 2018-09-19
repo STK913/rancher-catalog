@@ -1,0 +1,29 @@
+version: '2'
+services:
+  mariadb:
+    image: mariadb:latest
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    stdin_open: true
+    volumes:
+    - mariadb_data:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+  mautic:
+    image: mautic/mautic
+    environment:
+      MAUTIC_DB_HOST: mariadb:3306
+      MAUTIC_DB_NAME: mautic
+      MAUTIC_CRON_SUGARCRM: 'true'
+      MAUTIC_RUN_CRON_JOBS: 'true'
+    volumes:
+    - mautic_data:/var/www/html
+    ports:
+    - '${port}:80'
+
+volumes:
+  mariadb_data:
+    driver: local
+  mautic_data:
+    driver: local

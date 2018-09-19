@@ -1,0 +1,7 @@
+name: Mautic
+description: Mautic
+version: 0.0.1
+category: Marketing
+maintainer: Victor Gillet <victor.gillet@ubimap.fr>
+license: Apache 2
+projectURL: https://github.com/STK913/rancher-catalog
