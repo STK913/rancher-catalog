@@ -3,6 +3,7 @@ services:
   mariadb:
     image: mariadb:latest
     environment:
+      MYSQL_ROOT_PASSWORD: ceV8olA1EiOnSt07EpKu9kTD08CG6loT2dVDyvzkvs9XFOhCzI
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     stdin_open: true
     volumes:
@@ -15,7 +16,7 @@ services:
     environment:
       MAUTIC_DB_HOST: mariadb:3306
       MAUTIC_DB_NAME: mautic
-      MAUTIC_DB_PASSWORD: ''
+      MAUTIC_DB_PASSWORD: ceV8olA1EiOnSt07EpKu9kTD08CG6loT2dVDyvzkvs9XFOhCzI
       MAUTIC_CRON_SUGARCRM: 'true'
       MAUTIC_RUN_CRON_JOBS: 'true'
     volumes:
