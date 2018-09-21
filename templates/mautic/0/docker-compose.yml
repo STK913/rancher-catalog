@@ -12,7 +12,6 @@ services:
       io.rancher.container.pull_image: always
   mautic:
     image: mautic/mautic
-    container_name: '${container_name}'
     environment:
       MAUTIC_DB_HOST: mariadb:3306
       MAUTIC_DB_NAME: mautic
