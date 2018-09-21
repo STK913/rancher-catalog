@@ -9,3 +9,8 @@
       label: Port number
       type: int
       required: true
+
+    - variable: container_name
+      label: Container name
+      type: string
+      required: true
